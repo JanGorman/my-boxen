@@ -55,3 +55,27 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+github "java",
+github "heroku",
+github "zsh",
+github "appcode2",
+github "intellij",
+github "rubymine",
+github "viscosity",
+
+# Misc software
+github "textexpander",
+github "alfred",
+github "transmit",
+github "skype",
+github "transmission",
+github "onepassword",
+github "dropbox",
+github "handbrake",
+github "wunderlist",
+
+# Browsers
+github "chrome",
+github "firefox",
+github "opera",
