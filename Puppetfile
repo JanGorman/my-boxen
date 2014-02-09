@@ -57,25 +57,26 @@ github "xquartz",    "1.1.0"
 # https://github.com/boxen.
 
 github "java",
-github "heroku",
-github "zsh",
-github "appcode2",
-github "intellij",
-github "rubymine",
-github "viscosity",
+github "heroku"
+github "zsh"
+github "appcode2"
+github "intellij"
+github "rubymine"
+github "viscosity"
+github "textmate"
 
 # Misc software
-github "textexpander",
-github "alfred",
-github "transmit",
-github "skype",
-github "transmission",
-github "onepassword",
-github "dropbox",
-github "handbrake",
-github "wunderlist",
+github "textexpander"
+github "alfred"
+github "transmit"
+github "skype"
+github "transmission"
+github "onepassword"
+github "dropbox"
+github "handbrake"
+github "wunderlist"
 
 # Browsers
-github "chrome",
-github "firefox",
-github "opera",
+github "chrome"
+github "firefox"
+github "opera"

@@ -10,6 +10,7 @@ class people::jangorman::applications {
   include appcode2
   include rubymine
   include viscosity
+  include textmate::textmate2::nightly
 
   class { 'intellij':
     edition: 'ultimate',
