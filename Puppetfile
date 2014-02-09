@@ -75,6 +75,7 @@ github "onepassword"
 github "dropbox"
 github "handbrake"
 github "wunderlist"
+github "mou"
 
 # Browsers
 github "chrome"

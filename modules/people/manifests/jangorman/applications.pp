@@ -27,6 +27,7 @@ class people::jangorman::applications {
   include dropbox
   include handbrake
   include wunderlist
+  include mou
 
   # Browsers
   include chrome
