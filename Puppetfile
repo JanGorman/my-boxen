@@ -64,6 +64,7 @@ github "intellij"
 github "rubymine"
 github "viscosity"
 github "textmate"
+github "virtualbox"
 
 # Misc software
 github "textexpander"

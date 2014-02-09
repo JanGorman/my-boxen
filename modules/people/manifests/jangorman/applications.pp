@@ -11,6 +11,7 @@ class people::jangorman::applications {
   include rubymine
   include viscosity
   include textmate::textmate2::nightly
+  include virtualbox
 
   class { 'intellij':
     edition: 'ultimate',
