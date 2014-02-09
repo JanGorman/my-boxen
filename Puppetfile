@@ -76,6 +76,7 @@ github "dropbox"
 github "handbrake"
 github "wunderlist"
 github "mou"
+github "vlc"
 
 # Browsers
 github "chrome"

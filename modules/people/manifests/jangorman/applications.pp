@@ -28,6 +28,7 @@ class people::jangorman::applications {
   include handbrake
   include wunderlist
   include mou
+  include vlc
 
   # Browsers
   include chrome
