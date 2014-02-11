@@ -56,6 +56,8 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+github "osx"
+
 github "java"
 github "heroku"
 github "zsh"
