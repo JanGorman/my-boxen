@@ -42,10 +42,10 @@ class people::jangorman {
     ensure  => directory
   }
 
-  repository { $dotfiles:
-    source  => 'jbarnette/dotfiles',
-    require => File[$my]
-  }
+  # repository { $dotfiles:
+  #   source  => 'jbarnette/dotfiles',
+  #   require => File[$my]
+  # }
   
   # Homebrew
   package {
