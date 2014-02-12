@@ -1,6 +1,41 @@
-include people::jangorman::applications
-
 class people::jangorman {
+
+  include osx::finder::show_external_hard_drives_on_desktop
+  include osx::software_update
+  include osx::
+
+  # Development
+  include java
+  include heroku
+  include zsh
+  include appcode2
+  include rubymine
+  include viscosity
+  include textmate::textmate2::nightly
+  include virtualbox
+
+  class { 'intellij':
+    edition: 'ultimate',
+    version: '12.1.6'
+  }
+
+  # Misc software
+  include textexpander
+  include alfred
+  include transmit
+  include skype
+  include transmission
+  include onepassword
+  include dropbox
+  include handbrake
+  include wunderlist
+  include mou
+  include vlc
+
+  # Browsers
+  include chrome
+  include firefox
+  include opera
   
   $home     = "/Users/${::boxen_user}"
   $my       = "${home}/my"
@@ -15,36 +50,12 @@ class people::jangorman {
     require => File[$my]
   }
 
-  # # Changes the default shell to the zsh version we get from Homebrew
-  # # Uses the osx_chsh type out of boxen/puppet-osx
-  # osx_chsh { $::luser:
-  #   shell   => '/opt/boxen/homebrew/bin/zsh',
-  #   require => Package['zsh']
-  # }
-  # 
-  # file_line { 'add zsh to /etc/shells':
-  #   path    => '/etc/shells',
-  #   line    => "${boxen::config::homebrewdir}/bin/zsh",
-  #   require => Package['zsh']
-  # }
-  # 
-  # ##################################
-  # ## Facter, Puppet, and Envpuppet##
-  # ##################################
-  # 
-  # repository { "${::boxen_srcdir}/puppet":
-  #   source => 'puppetlabs/puppet'
-  # }
-  # 
-  # repository { "${::boxen_srcdir}/facter":
-  #   source => 'puppetlabs/facter'
-  # }
-  # 
-  # file { '/bin/envpuppet':
-  #   ensure  => link,
-  #   mode    => '0755',
-  #   target  => "${::boxen_srcdir}/puppet/ext/envpuppet",
-  #   require => Repository["${::boxen_srcdir}/puppet"]
-  # }
+  class security inherits boxen::security {
+    Boxen::Osx_defaults['short delay for password dialog on screensaver'] {
+      value  => 0,
+    }
+  }
+
+  include security
 
 }
