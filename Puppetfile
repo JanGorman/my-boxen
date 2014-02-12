@@ -79,6 +79,8 @@ github "dropbox"
 github "handbrake"
 github "mou"
 github "vlc"
+github "spotify"
+github "ohmyzsh", "1.0.0", :repo => "samjsharpe/puppet-ohmyzsh"
 
 # Browsers
 github "chrome"

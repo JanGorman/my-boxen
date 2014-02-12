@@ -28,11 +28,14 @@ class people::jangorman {
   include handbrake
   include mou
   include vlc
+  include spotify
+  include ohmyzsh
 
   # Browsers
   include chrome
   include firefox
   include opera
+  
   
   $home     = "/Users/${::boxen_user}"
   $my       = "${home}/my"
@@ -42,10 +45,18 @@ class people::jangorman {
     ensure  => directory
   }
 
-  # repository { $dotfiles:
-  #   source  => 'jbarnette/dotfiles',
-  #   require => File[$my]
-  # }
+  repository { $dotfiles:
+    source  => 'JanGorman/dotfiles',
+    require => File[$my]
+  }
+  
+  exec { "install dotfiles":
+    provider => shell,
+    command  => "./script/install",
+    cwd      => $dotfiles,
+    creates  => "${home}/.zshrc",
+    require  => Repository[$dotfiles],
+  }
   
   # Homebrew
   package {
