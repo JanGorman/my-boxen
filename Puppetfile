@@ -77,7 +77,6 @@ github "transmission"
 github "onepassword"
 github "dropbox"
 github "handbrake"
-github "wunderlist"
 github "mou"
 github "vlc"
 

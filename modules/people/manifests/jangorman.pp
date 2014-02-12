@@ -2,7 +2,6 @@ class people::jangorman {
 
   include osx::finder::show_external_hard_drives_on_desktop
   include osx::software_update
-  include osx::
 
   # Development
   include java
@@ -15,8 +14,8 @@ class people::jangorman {
   include virtualbox
 
   class { 'intellij':
-    edition: 'ultimate',
-    version: '12.1.6'
+    edition => 'ultimate',
+    version => '12.1.6'
   }
 
   # Misc software
@@ -25,10 +24,8 @@ class people::jangorman {
   include transmit
   include skype
   include transmission
-  include onepassword
   include dropbox
   include handbrake
-  include wunderlist
   include mou
   include vlc
 
@@ -49,10 +46,31 @@ class people::jangorman {
     source  => 'jbarnette/dotfiles',
     require => File[$my]
   }
-
+  
+  # Homebrew
+  package {
+    [
+      'autojump',
+      'ffind',
+      'mackup',
+      'maven',
+      'most',
+      'pigz',
+      'the_silver_searcher',
+      'tig',
+      'unp',
+      'cloc',
+      'gist',
+      'git-extras',
+      'ledger',
+      'zsh-completions'
+    ]:
+    ensure => 'present'
+  }
+  
   class security inherits boxen::security {
     Boxen::Osx_defaults['short delay for password dialog on screensaver'] {
-      value  => 0,
+      value  => 60,
     }
   }
 
