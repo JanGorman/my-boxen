@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: Traxmaxx/puppet-littlesnitch
+  specs:
+    littlesnitch (1.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
     alfred (1.1.7)
@@ -149,6 +154,11 @@ GITHUBTARBALL
     skype (1.0.8)
 
 GITHUBTARBALL
+  remote: boxen/puppet-spotify
+  specs:
+    spotify (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -208,6 +218,11 @@ GITHUBTARBALL
   specs:
     stdlib (4.1.0)
 
+GITHUBTARBALL
+  remote: samjsharpe/puppet-ohmyzsh
+  specs:
+    ohmyzsh (1.0.0)
+
 DEPENDENCIES
   alfred (>= 0)
   appcode2 (>= 0)
@@ -227,9 +242,11 @@ DEPENDENCIES
   inifile (= 1.0.0)
   intellij (>= 0)
   java (>= 0)
+  littlesnitch (= 1.0.2)
   mou (>= 0)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
+  ohmyzsh (= 1.0.0)
   onepassword (>= 0)
   openssl (= 1.0.0)
   opera (>= 0)
@@ -240,6 +257,7 @@ DEPENDENCIES
   ruby (= 6.7.2)
   rubymine (>= 0)
   skype (>= 0)
+  spotify (>= 0)
   stdlib (= 4.1.0)
   sudo (= 1.0.0)
   textexpander (>= 0)

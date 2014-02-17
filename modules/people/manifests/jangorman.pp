@@ -30,6 +30,7 @@ class people::jangorman {
   include vlc
   include spotify
   include ohmyzsh
+  include littlesnitch
 
   # Browsers
   include chrome
@@ -81,7 +82,7 @@ class people::jangorman {
   
   class security inherits boxen::security {
     Boxen::Osx_defaults['short delay for password dialog on screensaver'] {
-      value  => 60,
+      value  => 3600,
     }
   }
 
