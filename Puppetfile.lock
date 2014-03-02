@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: JanGorman/puppet-simpholders
+  specs:
+    simpholders (1.0.0)
+
+GITHUBTARBALL
   remote: Traxmaxx/puppet-littlesnitch
   specs:
     littlesnitch (1.0.2)
@@ -256,6 +261,7 @@ DEPENDENCIES
   repository (= 2.2.0)
   ruby (= 6.7.2)
   rubymine (>= 0)
+  simpholders (= 1.0.0)
   skype (>= 0)
   spotify (>= 0)
   stdlib (= 4.1.0)

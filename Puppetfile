@@ -82,6 +82,7 @@ github "vlc"
 github "spotify"
 github "ohmyzsh", "1.0.0", :repo => "samjsharpe/puppet-ohmyzsh"
 github "littlesnitch", "1.0.2", :repo => "Traxmaxx/puppet-littlesnitch"
+github "simpholders", "1.0.0", :repo => "JanGorman/puppet-simpholders"
 
 # Browsers
 github "chrome"

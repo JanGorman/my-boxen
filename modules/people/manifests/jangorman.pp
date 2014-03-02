@@ -12,6 +12,7 @@ class people::jangorman {
   include viscosity
   include textmate::textmate2::nightly
   include virtualbox
+  include simpholders
 
   class { 'intellij':
     edition => 'ultimate',
