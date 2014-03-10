@@ -76,7 +76,8 @@ class people::jangorman {
       'gist',
       'git-extras',
       'ledger',
-      'zsh-completions'
+      'zsh-completions',
+      'chisel'
     ]:
     ensure => 'present'
   }
