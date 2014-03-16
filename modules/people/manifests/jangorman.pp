@@ -37,12 +37,12 @@ class people::jangorman {
   include chrome
   include firefox
   include opera
-  
-  
+
+
   $home     = "/Users/${::boxen_user}"
   $my       = "${home}/my"
   $dotfiles = "${my}/dotfiles"
-  
+
   file { $my:
     ensure  => directory
   }
@@ -51,7 +51,7 @@ class people::jangorman {
     source  => 'JanGorman/dotfiles',
     require => File[$my]
   }
-  
+
   exec { "install dotfiles":
     provider => shell,
     command  => "./script/install",
@@ -59,8 +59,14 @@ class people::jangorman {
     creates  => "${home}/.zshrc",
     require  => Repository[$dotfiles],
   }
-  
+
   # Homebrew
+  exec {
+    'tap-homebrew-thoughtbot':
+      command => 'brew tap thoughtbot/formulae',
+      creates => "${homebrew::config::tapsdir}/thoughtbot-formulae",
+  }
+
   package {
     [
       'autojump',
@@ -77,11 +83,12 @@ class people::jangorman {
       'git-extras',
       'ledger',
       'zsh-completions',
-      'chisel'
+      'chisel',
+      'liftoff'
     ]:
     ensure => 'present'
   }
-  
+
   class security inherits boxen::security {
     Boxen::Osx_defaults['short delay for password dialog on screensaver'] {
       value  => 3600,
