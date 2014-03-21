@@ -84,7 +84,8 @@ class people::jangorman {
       'ledger',
       'zsh-completions',
       'chisel',
-      'liftoff'
+      'liftoff',
+      'gibo'
     ]:
     ensure => 'present'
   }
