@@ -85,7 +85,8 @@ class people::jangorman {
       'zsh-completions',
       'chisel',
       'liftoff',
-      'gibo'
+      'gibo',
+      'xctool'
     ]:
     ensure => 'present'
   }
