@@ -71,6 +71,7 @@ class people::jangorman {
     [
       'autojump',
       'ffind',
+      'jq',
       'mackup',
       'maven',
       'most',
