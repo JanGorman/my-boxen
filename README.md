@@ -81,10 +81,6 @@ cd /opt/boxen/repo
 ./script/boxen
 ```
 
-You can also skip the above steps and <a href="#customizing">customize your
-boxen</a> before installing it.
-
-
 ### Distributing
 
 That's enough to get your boxen into a usable state on other machines,
@@ -138,10 +134,11 @@ This template project provides the following by default:
 * Node.js 0.6
 * Node.js 0.8
 * Node.js 0.10
-* Ruby 1.8.7
-* Ruby 1.9.2
 * Ruby 1.9.3
 * Ruby 2.0.0
+* Ruby 2.1.0
+* Ruby 2.1.1
+* Ruby 2.1.2
 * ack
 * Findutils
 * GNU tar
@@ -178,11 +175,11 @@ boxen repo (ex. /path/to/your-boxen/Puppetfile):
     # Optional/custom modules. There are tons available at
     # https://github.com/boxen.
 
-    github "java",     "1.1.0"
+    github "java",     "1.6.0"
 
 In the above snippet of a customized Puppetfile, the bottom line
-includes the Java module from Github using the tag "1.1.0" from the github repository
-"boxen/puppet-java".  The function "github" is defined at the top of the Puppetfile
+includes the Java module from Github using the tag "1.6.0" from the github repository
+"[boxen/puppet-java/releases](https://github.com/boxen/puppet-java/releases)".  The function "github" is defined at the top of the Puppetfile
 and takes the name of the module, the version, and optional repo location:
 
     def github(name, version, options = nil)
@@ -194,8 +191,34 @@ and takes the name of the module, the version, and optional repo location:
 Now Puppet knows where to download the module from when you include it in your site.pp or mypersonal.pp file:
 
     # include the java module referenced in my Puppetfile with the line
-    # github "java",     "1.1.0"
+    # github "java",     "1.6.0"
     include java
+
+### Hiera
+
+Hiera is preferred mechanism to make changes to module defaults (e.g. default
+global ruby version, service ports, etc). This repository supplies a
+starting point for your Hiera configuration at `config/hiera.yml`, and an
+example data file at `hiera/common.yaml`. See those files for more details.
+
+The default `config/hiera.yml` is configured with a hierarchy that allows
+individuals to have their own hiera data file in
+`hiera/users/{github_login}.yaml` which augments and overrides
+site-wide values in `hiera/common.yaml`. This default is, as with most of the
+configuration in the example repo, a great starting point for many
+organisations, but is totally up to you. You might want to, for
+example, have a set of values that can't be overridden by adding a file to
+the top of the hierarchy, or to have values set on specific OS
+versions:
+
+```yaml
+# ...
+:hierarchy:
+  - "global-overrides.yaml"
+  - "users/%{::github_login}"
+  - "osx-%{::macosx_productversion_major}"
+  - common
+```
 
 ### Node definitions
 
@@ -278,6 +301,9 @@ we'll fork it under the Boxen org and give you read+write access to our
 fork.
 You'll still be the maintainer, you'll still own the issues and PRs.
 It'll just be listed under the boxen org so folks can find it more easily.
+
+##upgrading boxen
+See [FAQ-Upgrading](https://github.com/boxen/our-boxen/blob/master/docs/faq.md#q-how-do-you-upgrade-your-boxen-from-the-public-our-boxen).
 
 ## Integrating with Github Enterprise
 
