@@ -7,16 +7,16 @@ class people::jangorman {
   include java
   include heroku
   include zsh
-  include appcode2
+  # include appcode2
   include rubymine
   include viscosity
-  include textmate::textmate2::nightly
-  include virtualbox
-  include simpholders
+  # include textmate::textmate2::nightly
+  # include virtualbox
+  # include simpholders
 
   class { 'intellij':
     edition => 'ultimate',
-    version => '12.1.6'
+    version => '13.1.1'
   }
 
   # Misc software
@@ -24,19 +24,19 @@ class people::jangorman {
   include alfred
   include transmit
   include skype
-  include transmission
+  # include transmission
   include dropbox
   include handbrake
   include mou
   include vlc
-  include spotify
+  # include spotify
   include ohmyzsh
-  include littlesnitch
+  # include littlesnitch
 
   # Browsers
   include chrome
   include firefox
-  include opera
+  # include opera
 
 
   $home     = "/Users/${::boxen_user}"
