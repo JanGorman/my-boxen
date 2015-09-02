@@ -30,7 +30,7 @@ class people::jangorman {
   include mou
   include vlc
   # include spotify
-  include ohmyzsh
+  # include ohmyzsh
   # include littlesnitch
 
   # Browsers
