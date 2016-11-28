@@ -1,4 +1,11 @@
 class people::jangorman {
+  
+  service {"dev.nginx":
+    ensure => "stopped",
+  }
+  service {"dev.dnsmasq":
+    ensure => "stopped",
+  }
 
   include osx::finder::show_external_hard_drives_on_desktop
   include osx::software_update
