@@ -54,7 +54,7 @@ GEM
       rake
       rspec (>= 2.9.0)
       rspec-puppet (>= 0.1.1)
-    rake (10.3.2)
+    rake (12.3.2)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -89,5 +89,5 @@ DEPENDENCIES
   puppet (= 3.7.1)
   puppet-lint (= 0.3.2)
   puppetlabs_spec_helper (= 0.4.1)
-  rake (= 10.3.2)
+  rake (= 12.3.2)
   rspec-puppet (= 1.0.1)
